@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RedSocialFace.views.MainPage"
+    BackgroundColor="Blue">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <!-- Título del App -->
+            <Label Text="Pock Slop"
+                   TextColor="White"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   SemanticProperties.HeadingLevel="Level1" />
+
+            <!-- Imagen del logo (opcional) -->
+            <Image Source="login.png"
+                   HorizontalOptions="Center" />
+
+            <!-- Imagen de inicio de sesión -->
+            <Image Source="prueba.png"
+                   HeightRequest="185"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   SemanticProperties.Description="Imagen de inicio de sesión" />
+
+            <!-- Mensaje de bienvenida -->
+            <Label Text="Bienvenido, por favor ingrese su correo y contraseña"
+                   TextColor="White"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   SemanticProperties.HeadingLevel="Level1" />
+
+            <!-- Entrada de Gmail con borde negro fino -->
+            <Frame BorderColor="Black"
+                   CornerRadius="5"
+                   Padding="5"
+                   HasShadow="False"
+                   BackgroundColor="Transparent">
+                <Entry x:Name="UsernameEntry"
+                       Placeholder="gmail"
+                       TextColor="White"
+                       FontSize="16"
+                       Keyboard="Email"
+                       BackgroundColor="Transparent"/>
+            </Frame>
+
+            <!-- Entrada de contraseña con borde negro fino -->
+            <Frame BorderColor="Black"
+                   CornerRadius="5"
+                   Padding="5"
+                   HasShadow="False"
+                   BackgroundColor="Transparent">
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="contraña"
+                       TextColor="White"
+                       IsPassword="True"
+                       FontSize="16"
+                       BackgroundColor="Transparent"/>
+            </Frame>
+
+            <!-- Botón de Login -->
+            <Button x:Name="LoginButton"
+                    Text="Login"
+                    Clicked="OnLoginButtonClicked"
+                    Margin="0,10"
+                    CornerRadius="20"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    WidthRequest="150"
+                    HeightRequest="50"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    FontFamily="Arial"
+                    FontSize="Medium"
+                    FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

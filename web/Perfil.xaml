@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RedSocialFace.views.Perfil"
+    Title="Perfil"
+    BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout Spacing="15">
+            <!-- Sección de Cover y Foto de Perfil -->
+            <Grid>
+                <Image Source="messi1.png" 
+                       Aspect="AspectFill"
+                       HeightRequest="200"/>
+                <!-- Foto de perfil superpuesta en un Frame circular -->
+                <Frame WidthRequest="120"
+                       HeightRequest="120"
+                       CornerRadius="70"
+                       BorderColor="Black"
+                       BackgroundColor="White"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       VerticalOptions="End"
+                       HorizontalOptions="Center"
+                       Margin="0,-60,0,0">
+                    <Image Source="messi11.png"
+                           Aspect="AspectFill"
+                           Scale="1.2"/>
+                </Frame>
+            </Grid>
+
+            <!-- informacion del usuario -->
+            <StackLayout Padding="10" HorizontalOptions="Center">
+                <Label Text="Leonel Messi"
+                       FontSize="37"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Label Text="Vive en Miami, USA"
+                       FontSize="16"
+                       HorizontalOptions="Center" />
+                <Label Text="Pension de la abuela pa | Music Lover | Fulbol"
+                       FontSize="14"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+            <!-- saccion de Amigos -->
+            <StackLayout Padding="10">
+                <Label Text="Amigos que sigo"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+                <!--me sirve para desplazarme horizontalmente-->
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <!-- parte de los amigos -->
+                        <Frame WidthRequest="60" HeightRequest="60" 
+                               CornerRadius="30" 
+                               IsClippedToBounds="True"
+                               Padding="0">
+                            <Image Source="messi2.png" 
+                                   Aspect="AspectFill" />
+                        </Frame>
+                        <Frame WidthRequest="60" HeightRequest="60" 
+                               CornerRadius="30" 
+                               IsClippedToBounds="True"
+                               Padding="0">
+                            <Image Source="messi4.png" 
+                                   Aspect="AspectFill" />
+                        </Frame>
+                        <Frame WidthRequest="60" HeightRequest="60" 
+                               CornerRadius="30" 
+                               IsClippedToBounds="True"
+                               Padding="0">
+                            <Image Source="messi5.png" 
+                                   Aspect="AspectFill" />
+                        </Frame>
+                        <Frame WidthRequest="60" HeightRequest="60" 
+                               CornerRadius="30" 
+                               IsClippedToBounds="True"
+                               Padding="0">
+                            <Image Source="messi8.png" 
+                                   Aspect="AspectFill" />
+                        </Frame>
+                        <!-- Agrega más amigos según lo necesites -->
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+            <!-- seccion de fotos -->
+            <StackLayout Padding="10">
+                <Label Text="Fotos"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Image Source="messi1.png" 
+                               Aspect="AspectFill" 
+                               HeightRequest="100" WidthRequest="100"/>
+                        <Image Source="messi10.png" 
+                               Aspect="AspectFill" 
+                               HeightRequest="100" WidthRequest="100" />
+                        <Image Source="messi3.png" 
+                               Aspect="AspectFill" 
+                               HeightRequest="100" WidthRequest="100"/>
+                        <Image Source="messi9.png" 
+                               Aspect="AspectFill" 
+                               HeightRequest="100" WidthRequest="100"/>
+                        <!-- Agrega mas fotos segun lo necesites -->
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+            <!-- seccion de Publicaciones -->
+            <StackLayout Padding="10" Spacing="20">
+                <Label Text="Publicaciones"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+                <StackLayout Spacing="20">
+                    <!-- publicacion 1 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="messi1.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <!-- Fila de iconos y contadores -->
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="10" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="5" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="2" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="dia de mate" 
+                              Padding="10" 
+                              FontSize="14"/>
+                            <StackLayout Padding="10" Spacing="5">
+                                <!-- Comentario 1 -->
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Frame
+                                        WidthRequest="30"
+                                        HeightRequest="30"
+                                        CornerRadius="15"
+                                        IsClippedToBounds="True"
+                                        Padding="0">
+                                        <!-- Foto del usuario que comenta -->
+                                        <Image Source="cr7.png" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <!-- Texto del comentario -->
+                                    <Label Text="CR7: la fifa te regalo ese mate????" VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Frame
+                                        WidthRequest="30"
+                                        HeightRequest="30"
+                                        CornerRadius="15"
+                                        IsClippedToBounds="True"
+                                        Padding="0">
+                                        <!-- Foto del usuario que comenta -->
+                                        <Image Source="paul1.png" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <!-- Texto del comentario -->
+                                    <Label Text="De Pail: deja de cotocar las pelotas" VerticalOptions="Center"/>
+                                </StackLayout>
+                                <!-- egregar mas comentarios -->
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <!-- publicacion 2 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="messi4.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="7" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="3" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="4" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="Sera verdad que vulvo a el barcelona???" 
+                              Padding="10" 
+                              FontSize="14"/>
+                            <StackLayout Padding="10" Spacing="5">
+                                <!-- Comentario 1 -->
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Frame
+                                        WidthRequest="30"
+                                        HeightRequest="30"
+                                        CornerRadius="15"
+                                        IsClippedToBounds="True"
+                                        Padding="0">
+                                        <!-- Foto del usuario que comenta -->
+                                        <Image Source="cr7.png" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <!-- Texto del comentario -->
+                                    <Label Text="CR7: Porque mejor no te retiras" VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Frame
+                                        WidthRequest="30"
+                                        HeightRequest="30"
+                                        CornerRadius="15"
+                                        IsClippedToBounds="True"
+                                        Padding="0">
+                                        <!-- Foto del usuario que comenta -->
+                                        <Image Source="paul1.png" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <!-- Texto del comentario -->
+                                    <Label Text="De Pail:No tenes alguna entrevista???" VerticalOptions="Center"/>
+                                </StackLayout>
+                                <!-- egregar mas comentarios -->
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- publicacion 3 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="messi3.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="12" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="6" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="3" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="camellando" 
+                              Padding="10" 
+                              FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- publicacion 4 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="messi9.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="15" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="8" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="6" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="como dominando tu corazon" 
+                              Padding="10" 
+                              FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- publicacion 5 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="messi11.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="20" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="10" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="7" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="Este va para msi fan y para mis headers" 
+                              Padding="10" 
+                              FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

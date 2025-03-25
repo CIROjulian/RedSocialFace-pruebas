@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RedSocialFace.views.chat1"
+    Title="Chat1"
+    BackgroundColor="White">
+
+    <!-- Usamos un Grid con dos filas:
+         * La primera fila (con *) para el área de mensajes (ScrollView).
+         * La segunda fila (Auto) para el Entry y el botón de enviar. -->
+    <Grid RowDefinitions="*,Auto">
+
+        <!-- Zona de mensajes -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout x:Name="ContenedorMensajes" Padding="10" Spacing="10">
+                <!-- Aquí se agregarán dinámicamente los mensajes -->
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Zona de entrada de texto y botón "Enviar" -->
+        <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="10">
+            <Entry x:Name="EntradaMensaje"
+                   Placeholder="Escribe un mensaje..."
+                   HorizontalOptions="FillAndExpand" />
+            <Button Text="Enviar"
+                    VerticalOptions="Center"
+                    Clicked="AlEnviarClicado" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
+

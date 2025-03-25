@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RedSocialFace.views.Mensajes"
+    Title="Mensajes"
+    BackgroundColor="White">
+
+    <!-- barra de bsqueda -->
+    <StackLayout Padding="10" Spacing="10">
+        <!-- Barra de búsqueda (opcional) -->
+        <SearchBar Placeholder="Buscar en mensajes..." 
+                   x:Name="BarraBusqueda"
+                   HorizontalOptions="FillAndExpand" />
+
+        <!-- Lista de conversaciones -->
+        <CollectionView x:Name="ListaMensajes"
+                        ItemsSource="{Binding ListaConversaciones}"
+                        SelectionMode="None"
+                        VerticalOptions="FillAndExpand">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!-- Cada conversación en un Grid con 3 columnas -->
+                    <Grid Padding="10" ColumnDefinitions="Auto, *, Auto">
+                        <!-- Foto de perfil circular -->
+                        <Frame WidthRequest="50" HeightRequest="50"
+                               CornerRadius="25"
+                               Padding="0"
+                               IsClippedToBounds="True"
+                               HorizontalOptions="Start"
+                               VerticalOptions="Center">
+                            <Image Source="{Binding FotoPerfil}"
+                                   Aspect="AspectFill" />
+                        </Frame>
+
+                        <!-- Nombre y mensaje -->
+                        <StackLayout Grid.Column="1"
+                                     Orientation="Vertical"
+                                     Padding="10,0"
+                                     VerticalOptions="Center">
+                            <Label Text="{Binding NombreContacto}"
+                                   FontAttributes="Bold"
+                                   FontSize="16" />
+                            <Label Text="{Binding UltimoMensaje}"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   LineBreakMode="TailTruncation"
+                                   MaxLines="1" />
+                        </StackLayout>
+
+                        <!-- estado de informacion -->
+                        <StackLayout Grid.Column="2"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End">
+                            <Label Text="{Binding HoraUltimoMensaje}"
+                                   FontSize="12"
+                                   TextColor="Gray"
+                                   HorizontalOptions="End" />
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

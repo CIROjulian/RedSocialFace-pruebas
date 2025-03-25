@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="RedSocialFace.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:RedSocialFace.views"
+    Title="RedSocialFace"
+    FlyoutBehavior="Flyout">
+
+    <!-- Menú lateral desplegable (Flyout) -->
+    <FlyoutItem Title="Menú">
+
+        <!-- NUEVA VISTA: Añadir Amigos, en la parte superior izquierda -->
+        <Tab Title="Inicio">
+            <ShellContent
+                Title="Inicio"
+                ContentTemplate="{DataTemplate views:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        
+        <Tab Title="Añadir Amigos">
+            <ShellContent
+                Title="Añadir Amigos"
+                ContentTemplate="{DataTemplate views:AñadirAmigos}"
+                Route="AñadirAmigosPage" />
+        </Tab>
+
+        <Tab Title="Principio">
+            <ShellContent
+                Title="Principio"
+                ContentTemplate="{DataTemplate views:Principio}"
+                Route="PrincipioPage" />
+        </Tab>
+
+        <Tab Title="Perfil">
+            <ShellContent
+                Title="Perfil"
+                ContentTemplate="{DataTemplate views:Perfil}"
+                Route="PerfilPage" />
+        </Tab>
+
+        <Tab Title="Amigos">
+            <ShellContent
+                Title="Amigos"
+                ContentTemplate="{DataTemplate views:Amigos}"
+                Route="AmigosPage" />
+        </Tab>
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="Mensajes">
+        <ShellContent
+            Title="Mensajes"
+            ContentTemplate="{DataTemplate views:Mensajes}"
+            Route="MensajesPage" />
+    </FlyoutItem>
+
+    <!-- Barra inferior (TabBar) siempre visible -->
+    <TabBar>
+
+        <ShellContent
+            Title="Principio"
+            Icon="usuario.png"
+            ContentTemplate="{DataTemplate views:Principio}"
+            Route="PrincipioPage2" />
+
+        <ShellContent
+            Title="Perfil"
+            ContentTemplate="{DataTemplate views:Perfil}"
+            Route="PerfilPage2" />
+
+        <ShellContent
+            Title="Amigos"
+            ContentTemplate="{DataTemplate views:Amigos}"
+            Route="AmigosPage2" />
+
+        <!-- Única definición de la ruta Chat1Page -->
+        <ShellContent
+            Title="Chat"
+            ContentTemplate="{DataTemplate views:chat1}"
+            Route="Chat1Page" />
+
+    </TabBar>
+
+</Shell>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RedSocialFace.views.Amigos"
+    Title="Amigos"
+    BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout Spacing="15">
+            <Grid>
+                <!-- foto de fondo -->
+                <Image Source="auron6.png" 
+                       Aspect="AspectFill"
+                       HeightRequest="200"/>
+                <!-- foto de perfil circular -->
+                <Frame WidthRequest="120"
+                       HeightRequest="120"
+                       CornerRadius="60"
+                       BorderColor="White"
+                       BackgroundColor="White"
+                       IsClippedToBounds="True"
+                       Padding="0"
+                       VerticalOptions="End"
+                       HorizontalOptions="Center"
+                       Margin="0,-60,0,0">
+                    <Image Source="auron3.png" 
+                           Aspect="AspectFill"
+                           Scale="1.2"/>
+                </Frame>
+            </Grid>
+
+            <!-- informacion del usuario -->
+            <StackLayout Padding="10" HorizontalOptions="Center">
+                <Label Text="Auron Play"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+                <Label Text="Barcelona, España"
+                       FontSize="16"
+                       HorizontalOptions="Center"/>
+                <Label Text="Youtuber y Strimer"
+                       FontSize="14"
+                       HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!-- apartado de botones -->
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Spacing="20"
+                         Padding="10">
+                <!-- boton seguir -->
+                <Button Text="Seguir" 
+                        x:Name="FollowButton"
+                        BackgroundColor="#1877F2"
+                        TextColor="White"
+                        CornerRadius="20"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        Clicked="OnActionButtonClicked">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#1877F2" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+
+                <!-- boton mensaje -->
+                <Button Text="Mensaje"
+                        x:Name="MessageButton"
+                        BackgroundColor="Gray"
+                        TextColor="White"
+                        CornerRadius="20"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        Clicked="OnActionButtonClicked">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Gray" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+
+                <!-- boton de mas -->
+                <Button Text="Más"
+                        x:Name="MoreButton"
+                        BackgroundColor="LightGray"
+                        TextColor="Black"
+                        CornerRadius="20"
+                        WidthRequest="100"
+                        HeightRequest="40"
+                        Clicked="OnActionButtonClicked">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="LightGray" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+            </StackLayout>
+
+            <!-- secciond de publicaciones -->
+            <StackLayout Padding="10" Spacing="20">
+                <Label Text="Publicaciones"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+                <StackLayout Spacing="20">
+                    <!-- publicacion 1 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="auron2.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <!-- filaa de iconos y contadores -->
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="10" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="5" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="2" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="Pensando en todo mirando al nada" 
+                              Padding="10" 
+                              FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- publicacion 2 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="auron4.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="7" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="3" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="4" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="Un poquito de todo y un poquito de nada" 
+                              Padding="10" 
+                              FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- publicacion 3 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="auon1.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="12" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="6" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="3" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="Que hasco hacer " 
+                              Padding="10" 
+                              FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- publicacion 4 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="auron3.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="15" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="8" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="6" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="Qur miras" 
+                              Padding="10" 
+                              FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- publicacion 5 -->
+                    <Frame HasShadow="True" Padding="0">
+                        <StackLayout>
+                            <Image Source="auron5.png" 
+                                   Aspect="AspectFill" 
+                                   HeightRequest="300"/>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="0">
+                                    <Image Source="megusta.png" 
+                                           HeightRequest="35" 
+                                           WidthRequest="35"/>
+                                    <Label Text="20" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="1" Margin="10,0,0,0">
+                                    <Image Source="like.png" 
+                                           HeightRequest="27" 
+                                           WidthRequest="27"/>
+                                    <Label Text="10" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="5" Grid.Column="2" Margin="10,0,0,0">
+                                    <Image Source="comentario.png" 
+                                           HeightRequest="22" 
+                                           WidthRequest="22"/>
+                                    <Label Text="7" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Grid>
+                            <Label 
+                              Text="Quien me saco de la casa" 
+                              Padding="10" 
+                              FontSize="14"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
