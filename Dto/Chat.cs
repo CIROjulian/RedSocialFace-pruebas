@@ -24,6 +24,5 @@ namespace RedSocialFace.Dto
         public string CodigoAmigo { get; set; }
 
         // Relación con Amigo: muchos Chats pueden pertenecer a un Amigo
-        public virtual Amigo amigo { get; set; }
     }
 }

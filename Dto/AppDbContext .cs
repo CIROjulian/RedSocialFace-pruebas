@@ -13,6 +13,7 @@ namespace RedSocialFace.DaraAcces
         // Ejemplo de DbSets
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<PerfilesDto> Perfiles { get; set; }
+        public DbSet<Chat> Chats { get; set; }
 
         // Solo usar OnConfiguring si quieres forzar la cadena
         // y no estás pasándola en AddDbContext.
