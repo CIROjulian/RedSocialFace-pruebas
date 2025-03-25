@@ -41,5 +41,7 @@ namespace RedSocialFace.Dto
         [Column(TypeName = "nvarchar(50)")]
         [Required]
         public string descripcion { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
+
     }
 }

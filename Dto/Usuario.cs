@@ -20,5 +20,17 @@ namespace RedSocialFace.DaraAcces
 
         [Column("CodigoPerfil", TypeName = "nvarchar(50)")]
         public string CodigoPerfil { get; set; }
+        //mas 
+
+        [Column("codigoChat")]
+        public int? CodigoChat { get; set; }
+
+        [Column("CodigoAmigo", TypeName = "nvarchar(50)")]
+        public string CodigoAmigo { get; set; }
+
+        // Navegaciones inversas (opcionales, si quieres acceder desde Usuario)
+        public virtual ICollection<Chat> Chats { get; set; }
+        public virtual ICollection<Amigo> Amigos { get; set; }
+
     }
 }
